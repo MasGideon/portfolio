@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gideon Sam A | Designer Resume</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6366f1;
+            --secondary: #a855f7;
+            --text-main: #1e293b;
+            --text-light: #64748b;
+            --bg-page: #ffffff;
+            --accent-bg: #f8fafc;
+            --border: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f1f5f9;
+            color: var(--text-main);
+            line-height: 1.5;
+            padding: 40px 0;
+        }
+
+        /* A4 Page Styling */
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 20mm;
+            margin: auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        @media print {
+            body { background: none; padding: 0; }
+            .page { box-shadow: none; margin: 0; width: 100%; height: 100%; padding: 15mm; }
+            .no-print { display: none; }
+        }
+
+        /* Decorative Elements */
+        .page::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 35%;
+            height: 100%;
+            background: var(--accent-bg);
+            z-index: 0;
+        }
+
+        /* Content Layout */
+        .content {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 2fr 1.1fr;
+            gap: 40px;
+        }
+
+        /* Left Column */
+        .header {
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 38px;
+            font-weight: 800;
+            letter-spacing: -1.5px;
+            color: #000;
+            line-height: 1;
+        }
+
+        .header p {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--primary);
+            font-weight: 600;
+            margin-top: 8px;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+
+        .summary {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-bottom: 30px;
+            text-align: justify;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #000;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--primary);
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        /* Project / Job Items */
+        .item {
+            margin-bottom: 20px;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+
+        .item-title {
+            font-weight: 700;
+            font-size: 15px;
+            color: #000;
+        }
+
+        .item-meta {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            color: var(--text-light);
+            text-transform: uppercase;
+        }
+
+        .item-sub {
+            font-style: italic;
+            font-size: 13px;
+            color: var(--primary);
+            margin-bottom: 6px;
+        }
+
+        .item-desc {
+            font-size: 13px;
+            color: var(--text-light);
+            list-style-position: outside;
+            padding-left: 14px;
+        }
+
+        .item-desc li {
+            margin-bottom: 4px;
+        }
+
+        /* Right Column (Sidebar) */
+        .sidebar-section {
+            margin-bottom: 25px;
+        }
+
+        .sidebar-title {
+            font-size: 13px;
+            font-weight: 800;
+            color: #000;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            font-size: 12px;
+            color: var(--text-light);
+            text-decoration: none;
+        }
+
+        .contact-item svg {
+            width: 14px;
+            height: 14px;
+            color: var(--primary);
+        }
+
+        .pill-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .pill {
+            background: #fff;
+            border: 1px solid var(--border);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        .edu-item {
+            margin-bottom: 15px;
+        }
+
+        .edu-per {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 14px;
+        }
+
+        .edu-details {
+            font-size: 11px;
+            color: var(--text-light);
+        }
+
+        /* Portfolio Callout */
+        .portfolio-box {
+            background: var(--primary);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .portfolio-box a {
+            color: white;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="page" id="resume">
+        <div class="content">
+            <!-- Main Content Area -->
+            <div class="main-col">
+                <header class="header">
+                    <h1>GIDEON<br>SAM A</h1>
+                    <p>UI/UX Designer & Developer</p>
+                </header>
+
+                <div class="summary">
+                    Creative and detail-oriented Designer with a background in Mechanical Engineering, blending technical precision with artistic vision. Expert in crafting high-impact visual stories, digital interfaces, and brand identities. Driven by design thinking to solve complex problems through streamlined, user-centric workflows.
+                </div>
+
+                <section>
+                    <h2 class="section-title">Key Projects</h2>
+                    
+                    <div class="item">
+                        <div class="item-header">
+                            <span class="item-title">TPCC Platform | Full-Stack UI/UX</span>
+                            <span class="item-meta">Web Application</span>
+                        </div>
+                        <div class="item-sub">Interface Designer & Developer</div>
+                        <ul class="item-desc">
+                            <li>Designed a custom Charcoal & Indigo dashboard ecosystem focusing on seamless data visualization and user tracking.</li>
+                            <li>Built a user-centric interaction model that automated common community management tasks.</li>
+                            <li>Bridged engineering logic with aesthetic frontend implementation using Tailwind CSS and JavaScript.</li>
+                        </ul>
+                    </div>
+
+                    <div class="item">
+                        <div class="item-header">
+                            <span class="item-title">TP Media | Brand Identity</span>
+                            <span class="item-meta">Visual Production</span>
+                        </div>
+                        <div class="item-sub">Visual Designer & Lead</div>
+                        <ul class="item-desc">
+                            <li>Developed a full-scale visual identity, ensuring brand consistency across diverse digital formats and social media.</li>
+                            <li>Engineered storytelling layouts in Figma that increased community engagement by prioritizing clarity.</li>
+                            <li>Delivered high-fidelity assets for digital storytelling and content clusters.</li>
+                        </ul>
+                    </div>
+
+                    <div class="item">
+                        <div class="item-header">
+                            <span class="item-title">Discord Architect | Automation</span>
+                            <span class="item-meta">System Design</span>
+                        </div>
+                        <div class="item-sub">Logic & Interface Specialist</div>
+                        <ul class="item-desc">
+                            <li>Architected high-end bot systems featuring **TruckersMP API** integration and advanced role management.</li>
+                            <li>Developed an **Automated CC System** and staff metrics dashboard to streamline community operations.</li>
+                            <li>Focused on "Invisible UI"—creating seamless automated workflows that improve user experience without friction.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 class="section-title">Technical Education</h2>
+                    <div class="item">
+                        <div class="item-header">
+                            <span class="item-title">B.E. Mechanical Engineering</span>
+                            <span class="item-meta">2020 — 2024</span>
+                        </div>
+                        <div class="item-sub">University VOC College of Engineering • 78%</div>
+                        <div class="item-desc">Applied engineering principles to design thinking, spatial modeling, and structural visualization.</div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Contact</h3>
+                    <a href="tel:+918056382662" class="contact-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        +91 8056382662
+                    </a>
+                    <a href="mailto:gideonsam2000@gmail.com" class="contact-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        gideonsam2000@gmail.com
+                    </a>
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        Tamil Nadu, India
+                    </div>
+                    <a href="https://masgideon.github.io/port/" class="contact-item" style="font-weight: 600; color: var(--primary);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                        masgideon.github.io/port/
+                    </a>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Technical Arsenal</h3>
+                    <div class="pill-group">
+                        <span class="pill">Figma</span>
+                        <span class="pill">Photoshop</span>
+                        <span class="pill">Tailwind CSS</span>
+                        <span class="pill">HTML / CSS</span>
+                        <span class="pill">NX CAD / CREO</span>
+                        <span class="pill">UI/UX Design</span>
+                        <span class="pill">Node.js</span>
+                        <span class="pill">JavaScript</span>
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Certifications</h3>
+                    <div class="edu-details" style="margin-bottom: 10px;">
+                        <b>3D Printing & NX CAD</b><br>TANSAM • Additive Design
+                    </div>
+                    <div class="edu-details" style="margin-bottom: 10px;">
+                        <b>EV Automobile Design</b><br>Skill-Lync • System Layout
+                    </div>
+                    <div class="edu-details" style="margin-bottom: 10px;">
+                        <b>Robotics Simulation</b><br>Naan Mudhalvan • Digital Twinning
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Core Competencies</h3>
+                    <ul style="list-style: none; font-size: 11px; color: var(--text-light);">
+                        <li style="margin-bottom: 5px;">• Creative Problem Solving</li>
+                        <li style="margin-bottom: 5px;">• Engineering Precision</li>
+                        <li style="margin-bottom: 5px;">• Systematic Design Flow</li>
+                        <li style="margin-bottom: 5px;">• API Lifecycle Logic</li>
+                    </ul>
+                </div>
+
+                <div class="portfolio-box">
+                    <a href="https://masgideon.github.io/port/">GIDEON.EXE →</a>
+                    <p style="font-size: 9px; opacity: 0.8; margin-top: 5px;">View Full Digital Presence</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="no-print" style="text-align: center; margin-top: 20px;">
+        <p style="font-size: 12px; color: var(--text-light);">Press <b>Ctrl + P</b> and set Destination to <b>Save as PDF</b></p>
+    </div>
+
+</body>
+</html>
