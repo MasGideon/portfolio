@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gideon Sam A - Resume</title>
+
+    <style>
+        :root {
+            --primary: #000;
+            --secondary: #333;
+            --text-main: #111;
+            --text-muted: #555;
+            --spacing-xs: 4px;
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 24px;
+            --spacing-xl: 32px;
+        }
+
+        @page {
+            size: A4;
+            margin: 15mm;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-variant-ligatures: none;
+            -webkit-font-smoothing: subpixel-antialiased;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            line-height: 1.4;
+            color: var(--text-main);
+            background: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            padding: 40px 0;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        .resume {
+            background: #fff;
+            width: 210mm;
+            min-height: 297mm;
+            padding: 20mm;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        @media print {
+            body { background: none; padding: 0; }
+            .resume { box-shadow: none; width: 100%; min-height: auto; padding: 0; }
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        h1 {
+            font-size: 26pt;
+            font-weight: 700;
+            margin-bottom: var(--spacing-xs);
+            text-transform: uppercase;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            font-size: 9pt;
+            color: var(--text-muted);
+        }
+
+        .contact-info a {
+            color: inherit;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        .contact-info a:hover {
+            border-color: var(--text-muted);
+        }
+
+        .dot {
+            color: #ccc;
+        }
+
+        section {
+            margin-bottom: var(--spacing-md);
+        }
+
+        h2 {
+            font-size: 10.5pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 2px;
+            margin-bottom: var(--spacing-sm);
+            letter-spacing: 0.8px;
+            color: var(--primary);
+        }
+
+        .summary {
+            font-size: 9.5pt;
+            text-align: justify;
+            color: var(--secondary);
+        }
+
+        .skills-container {
+            font-size: 9.5pt;
+        }
+
+        .skill-group {
+            margin-bottom: 4px;
+        }
+
+        .skill-group b {
+            font-weight: 600;
+            color: var(--primary);
+            min-width: 120px;
+            display: inline-block;
+        }
+
+        .experience-item, .project-item, .education-item {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 1px;
+        }
+
+        .title {
+            font-weight: 700;
+            font-size: 10.5pt;
+        }
+
+        .company, .university {
+            font-weight: 600;
+            font-style: normal;
+            font-size: 10pt;
+            color: var(--text-muted);
+        }
+
+        .date {
+            font-size: 9pt;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        ul {
+            list-style: none;
+            margin-top: 4px;
+        }
+
+        li {
+            font-size: 9.5pt;
+            position: relative;
+            padding-left: 15px;
+            margin-bottom: 3px;
+            text-align: justify;
+            color: var(--secondary);
+        }
+
+        li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #888;
+        }
+
+        .impact {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .education-item p {
+            font-size: 9.5pt;
+            margin-top: 2px;
+        }
+
+        .certifications-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3px;
+        }
+
+        .cert-item {
+            font-size: 9.5pt;
+            color: var(--secondary);
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="resume">
+        <header>
+            <h1>GIDEON SAM A</h1>
+            <div class="contact-info">
+                <span>+91 8056382662</span>
+                <span class="dot">•</span>
+                <a href="mailto:gideonsam2000@gmail.com">gideonsam2000@gmail.com</a>
+                <span class="dot">•</span>
+                <span>Thoothukudi, Tamil Nadu</span>
+                <span class="dot">•</span>
+                <a href="https://linkedin.com/in/gideon-sam">linkedin.com/in/gideon-sam</a>
+            </div>
+        </header>
+
+        <section>
+            <h2>Executive Summary</h2>
+            <p class="summary">
+                A highly motivated and adaptable graduate with a strong foundation in Mechanical Engineering and technical problem-solving. Skilled in utilizing advanced design tools like CAD and CREO to streamline processes and deliver high-quality results. Seeking a challenging role where I can apply my technical expertise, leadership abilities, and commitment to excellence to contribute to organizational success.
+            </p>
+        </section>
+
+        <section>
+            <h2>Technical Skills</h2>
+            <div class="skills-container">
+                <div class="skill-group"><b>Design & Analysis:</b> CAD, CREO, ANSYS, NX CAD</div>
+                <div class="skill-group"><b>Manufacturing:</b> 3D Printing</div>
+                <div class="skill-group"><b>Productivity:</b> MS Office Suite (Word, Excel, PowerPoint), Adaptability</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Professional Experience</h2>
+            <div class="experience-item">
+                <div class="item-header">
+                    <span class="title">Inplant Trainee</span>
+                    <span class="date">Jul 2023</span>
+                </div>
+                <div class="company">LUCAS TVS Pvt, LTD, Pondicherry</div>
+                <ul>
+                    <li>Gained detailed exposure to high-volume automotive component manufacturing and quality assurance protocols.</li>
+                    <li>Developed deep insights into <span class="impact">automated assembly lines</span> and lean manufacturing techniques, improving baseline process knowledge.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <span class="title">Inplant Trainee</span>
+                    <span class="date">Aug 2022</span>
+                </div>
+                <div class="company">NLC Tamil Nadu Power Ltd, Thoothukudi</div>
+                <ul>
+                    <li>Analyzed operational workflows and maintenance cycles of thermal power plant infrastructures and steam turbines.</li>
+                    <li>Collaborated with senior engineers on maintenance auditing, ensuring <span class="impact">optimal system uptime</span> during the training period.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Academic Projects</h2>
+            <div class="project-item">
+                <div class="item-header">
+                    <span class="title">Design and Fabrication of Fins for Improving Heat Transfer Rate using PCM</span>
+                    <span class="date">Mini Project</span>
+                </div>
+                <ul>
+                    <li>Engineered specialized cooling fins using Phase Change Materials (PCM) to enhance latent heat storage and dissipation.</li>
+                    <li>Achieved a <span class="impact">quantifiable increase in thermal efficiency</span> compared to standard conductive fins through experimental validation.</li>
+                </ul>
+            </div>
+
+            <div class="project-item">
+                <div class="item-header">
+                    <span class="title">Performance and Analysis of Thin-Walled Structures</span>
+                    <span class="date">Major Project</span>
+                </div>
+                <ul>
+                    <li>Conducted comprehensive stress and buckling analysis on various thin-walled geometric configurations.</li>
+                    <li>Provided <span class="impact">data-driven recommendations for structural optimization</span> in aerospace and automotive applications.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Education</h2>
+            <div class="education-item">
+                <div class="item-header">
+                    <span class="title">B.E. Mechanical Engineering</span>
+                    <span class="date">2020 – 2024</span>
+                </div>
+                <div class="university">University VOC College of Engineering, Thoothukudi</div>
+                <p>Academic Performance: <span class="impact">78%</span></p>
+            </div>
+
+            <div class="education-item">
+                <div class="item-header">
+                    <span class="title">Higher Secondary Certificate (HSC)</span>
+                    <span class="date">2018 – 2020</span>
+                </div>
+                <div class="university">Good Shepherd Model School, Thoothukudi</div>
+                <p>Score: 68%</p>
+            </div>
+
+            <div class="education-item">
+                <div class="item-header">
+                    <span class="title">Secondary School Leaving Certificate (SSLC)</span>
+                    <span class="date">2017 – 2018</span>
+                </div>
+                <div class="university">Good Shepherd Model School, Thoothukudi</div>
+                <p>Score: 72%</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Certifications & Highlights</h2>
+            <div class="certifications-list">
+                <div class="cert-item">• <b>Robotics Simulation for Manufacturing</b> – Naan Mudhalvan & SkillSonics</div>
+                <div class="cert-item">• <b>3D Printing using NX CAD</b> – Naan Mudhalvan & TANSAM</div>
+                <div class="cert-item">• <b>EV Design for Automobile</b> – Naan Mudhalvan & Skilllync</div>
+                <div class="cert-item">• <b>Employability Skills Training</b> – TITAN LeAP & Naandi Foundation</div>
+                <div class="cert-item">• <b>Team Lead (Design)</b> – PEMETRIX Symposium 2023</div>
+                <div class="cert-item">• <b>Social Service</b> – Active NSS Volunteer (2020–2022)</div>
+                <div class="cert-item">• <b>Languages:</b> English, Tamil, Hindi (Basic)</div>
+            </div>
+        </section>
+
+
+    </div>
+</body>
+</html>
