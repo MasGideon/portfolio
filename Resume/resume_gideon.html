@@ -52,6 +52,17 @@
             position: relative;
         }
 
+        .resume::after {
+            content: "";
+            position: absolute;
+            top: 8mm;
+            left: 8mm;
+            right: 8mm;
+            bottom: 8mm;
+            border: 1px solid #000;
+            pointer-events: none;
+        }
+
         @media print {
             body { background: none; padding: 0; }
             .resume { box-shadow: none; width: 100%; min-height: auto; padding: 0; }
