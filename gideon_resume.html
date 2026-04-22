@@ -10,16 +10,16 @@
             --secondary: #333;
             --text-main: #111;
             --text-muted: #555;
-            --spacing-xs: 4px;
-            --spacing-sm: 8px;
-            --spacing-md: 16px;
-            --spacing-lg: 24px;
-            --spacing-xl: 32px;
+            --spacing-xs: 1px;
+            --spacing-sm: 5px;
+            --spacing-md: 10px;
+            --spacing-lg: 15px;
+            --spacing-xl: 15px;
         }
 
         @page {
             size: A4;
-            margin: 15mm;
+            margin: 8mm;
         }
 
         * {
@@ -32,7 +32,7 @@
 
         body {
             font-family: 'Times New Roman', Times, serif;
-            line-height: 1.4;
+            line-height: 1.25;
             color: var(--text-main);
             background: #f4f4f4;
             display: flex;
@@ -44,27 +44,20 @@
 
         .resume {
             background: #fff;
-            width: 210mm;
-            min-height: 297mm;
-            padding: 20mm;
+            width: 194mm;
+            min-height: 281mm;
+            padding: 6mm;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             position: relative;
+            border: 1px solid #000;
+            margin: 8mm auto;
         }
 
-        .resume::after {
-            content: "";
-            position: absolute;
-            top: 8mm;
-            left: 8mm;
-            right: 8mm;
-            bottom: 8mm;
-            border: 1px solid #000;
-            pointer-events: none;
-        }
+
 
         @media print {
             body { background: none; padding: 0; }
-            .resume { box-shadow: none; width: 100%; min-height: auto; padding: 0; }
+            .resume { box-shadow: none; width: 100%; min-height: auto; padding: 10mm; margin: 0; border: 1px solid #000; }
         }
 
         header {
@@ -73,7 +66,7 @@
         }
 
         h1 {
-            font-size: 18pt;
+            font-size: 15pt;
             font-weight: 700;
             text-transform: uppercase;
             margin: 0;
@@ -90,7 +83,7 @@
         }
 
         .role {
-            font-size: 18pt;
+            font-size: 15pt;
             font-weight: 700;
             color: var(--primary);
             text-transform: uppercase;
@@ -100,11 +93,11 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 6px;
+            gap: 4px;
         }
 
         .contact-row-main {
-            font-size: 12pt;
+            font-size: 10.5pt;
             font-weight: 700;
             color: var(--primary);
         }
@@ -135,10 +128,11 @@
 
         section {
             margin-bottom: var(--spacing-md);
+            break-inside: avoid;
         }
 
         h2 {
-            font-size: 11pt;
+            font-size: 10pt;
             font-weight: 700;
             text-transform: uppercase;
             border-bottom: 1px solid #eee;
@@ -149,13 +143,13 @@
         }
 
         .summary {
-            font-size: 10.5pt;
+            font-size: 9.5pt;
             text-align: justify;
             color: var(--secondary);
         }
 
         .skills-container {
-            font-size: 10.5pt;
+            font-size: 9.5pt;
         }
 
         .skill-group {
@@ -170,7 +164,7 @@
         }
 
         .experience-item, .project-item, .education-item {
-            margin-bottom: var(--spacing-md);
+            margin-bottom: 5px;
         }
 
         .item-header {
@@ -182,13 +176,13 @@
 
         .title {
             font-weight: 700;
-            font-size: 11pt;
+            font-size: 10pt;
         }
 
         .company, .university, .project-role {
             font-weight: 700;
             font-style: italic;
-            font-size: 10.5pt;
+            font-size: 9.5pt;
             color: var(--text-muted);
         }
 
@@ -200,14 +194,14 @@
 
         ul {
             list-style: none;
-            margin-top: 4px;
+            margin-top: 2px;
         }
 
         li {
-            font-size: 10.5pt;
+            font-size: 9.5pt;
             position: relative;
             padding-left: 15px;
-            margin-bottom: 3px;
+            margin-bottom: 1.5px;
             text-align: justify;
             color: var(--secondary);
         }
@@ -237,7 +231,7 @@
         }
 
         .cert-item {
-            font-size: 10.5pt;
+            font-size: 9.5pt;
             color: var(--secondary);
         }
     </style>
