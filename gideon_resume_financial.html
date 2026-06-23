@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gideon Sam A - Resume</title>
+    <style>
+        :root {
+            --primary: #000;
+            --secondary: #333;
+            --text-main: #111;
+            --text-muted: #555;
+            --spacing-xs: 1px;
+            --spacing-sm: 4px;
+            --spacing-md: 8px;
+            --spacing-lg: 10px;
+        }
+
+        @page {
+            size: A4;
+            margin: 8mm;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-variant-ligatures: none;
+            -webkit-font-smoothing: subpixel-antialiased;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            line-height: 1.25;
+            color: var(--text-main);
+            background: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            padding: 40px 0;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        .resume {
+            background: #fff;
+            width: 194mm;
+            min-height: 281mm;
+            padding: 5mm;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            border: 1px solid #000;
+            margin: 0 auto;
+        }
+
+        @media print {
+            body { background: none; padding: 0; }
+            .resume { box-shadow: none; width: 100%; min-height: auto; padding: 6mm; margin: 0; border: 1px solid #000; }
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .name-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: var(--spacing-sm);
+            white-space: nowrap;
+        }
+
+        h1 {
+            font-size: 13.5pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin: 0;
+            display: inline;
+        }
+
+        .role {
+            font-size: 13.5pt;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .contact-row-main {
+            font-size: 9.5pt;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .contact-row-sub {
+            font-size: 9pt;
+            color: var(--text-muted);
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .contact-info a {
+            color: inherit;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        .contact-info a:hover {
+            border-color: var(--text-muted);
+        }
+
+        .dot {
+            color: #ccc;
+        }
+
+        section {
+            margin-bottom: var(--spacing-md);
+            break-inside: avoid;
+        }
+
+        h2 {
+            font-size: 9.5pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 1px;
+            margin-bottom: var(--spacing-sm);
+            letter-spacing: 0.8px;
+            color: var(--primary);
+        }
+
+        .objective {
+            font-size: 9pt;
+            text-align: justify;
+            color: var(--secondary);
+        }
+
+        .skills-container {
+            font-size: 9pt;
+        }
+
+        .skill-group {
+            margin-bottom: 3px;
+        }
+
+        .skill-group b {
+            font-weight: 700;
+            color: var(--primary);
+            min-width: 185px;
+            display: inline-block;
+        }
+
+        .experience-item, .project-item, .education-item {
+            margin-bottom: 5px;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 1px;
+        }
+
+        .title {
+            font-weight: 700;
+            font-size: 9.5pt;
+        }
+
+        .company, .university, .project-role {
+            font-weight: 700;
+            font-style: italic;
+            font-size: 9pt;
+            color: var(--text-muted);
+        }
+
+        .date, .project-type {
+            font-size: 9.5pt;
+            color: var(--text-muted);
+            font-weight: 700;
+        }
+
+        ul {
+            list-style: none;
+            margin-top: 2px;
+        }
+
+        li {
+            font-size: 9pt;
+            position: relative;
+            padding-left: 12px;
+            margin-bottom: 1px;
+            text-align: justify;
+            color: var(--secondary);
+        }
+
+        li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #000;
+            font-weight: bold;
+        }
+
+        .impact {
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .education-item p {
+            font-size: 9.5pt;
+            margin-top: 1px;
+        }
+
+        .certifications-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3px;
+        }
+
+        .cert-item {
+            font-size: 9pt;
+            color: var(--secondary);
+        }
+
+        .personal-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            font-size: 9pt;
+            color: var(--secondary);
+        }
+
+        .personal-item b {
+            color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+    <div class="resume">
+        <header>
+            <div class="name-section">
+                <h1>GIDEON SAM A</h1>
+                <span style="font-size: 18pt; font-weight: 700; color: #ccc;">|</span>
+                <span class="role">Financial Relationship Manager</span>
+            </div>
+            <div class="contact-info">
+                <div class="contact-row-main">
+                    <span>+91 8056382662</span>
+                    <span class="dot">•</span>
+                    <a href="mailto:gideonsam2000@gmail.com">gideonsam2000@gmail.com</a>
+                </div>
+                <div class="contact-row-sub">
+                    <span>Thoothukudi, Tamil Nadu, India</span>
+                    <span class="dot">•</span>
+                    <a href="https://linkedin.com/in/gideon-sam">linkedin.com/in/gideon-sam</a>
+                    <span class="dot">•</span>
+                    <a href="https://masgideon.github.io/portfolio/">masgideon.github.io/portfolio</a>
+                </div>
+            </div>
+        </header>
+
+        <section>
+            <h2>Career Objective</h2>
+            <p class="objective">
+                Motivated and customer-focused finance graduate seeking a Financial Relationship Manager position. Strong understanding of banking products, financial services, customer relationship management, and sales principles. Eager to leverage communication, analytical, and interpersonal skills to build client relationships and contribute to business growth.
+            </p>
+        </section>
+
+        <section>
+            <h2>Core Skills</h2>
+            <div class="skills-container">
+                <div class="skill-group"><b>Banking & Client Relations:</b> Customer Relationship Management, Client Acquisition, Sales and Business Development, Communication & Negotiation, Banking & Financial Services</div>
+                <div class="skill-group"><b>Analysis & Operations:</b> Financial Product Knowledge, Financial Analysis, Problem Solving</div>
+                <div class="skill-group"><b>Tools & Software:</b> Microsoft Excel (Advanced), MS Word & PowerPoint, CRM Tools (Basic Knowledge)</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Education</h2>
+            <div class="education-item">
+                <div class="item-header">
+                    <span class="title">B.E. Mechanical Engineering (Prepared for Financial Management)</span>
+                    <span class="date">2020 – 2024</span>
+                </div>
+                <div class="university">University VOC College of Engineering, Thoothukudi</div>
+                <p>Systematic design, technical precision, and analytical problem-solving. Academic Performance: <span class="impact">78%</span></p>
+                <p style="font-size: 9pt; color: var(--secondary); margin-top: 2px;"><b>Relevant Coursework:</b> Financial Management, Banking Operations, Investment Analysis, Accounting, Business Communication</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Languages</h2>
+            <div class="certifications-list">
+                <div class="cert-item">English (Fluent), Tamil (Native), Hindi (Conversational / Basic)</div>
+            </div>
+        </section>
+
+        <section style="margin-bottom: 0;">
+            <h2>Personal Details</h2>
+            <div class="personal-grid">
+                <div class="personal-item"><b>Date of Birth:</b> 14/09/2002</div>
+                <div class="personal-item"><b>Location:</b> Thoothukudi, Tamil Nadu</div>
+                <div class="personal-item"><b>Nationality:</b> Indian</div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

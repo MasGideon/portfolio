@@ -3,23 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gideon Sam A - UI/UX Designer Resume</title>
+    <title>Gideon Sam A - Full Stack Developer Resume</title>
     <style>
         :root {
-            --primary: #000;
-            --secondary: #333;
-            --text-main: #111;
-            --text-muted: #555;
-            --spacing-xs: 1px;
-            --spacing-sm: 5px;
-            --spacing-md: 10px;
-            --spacing-lg: 15px;
-            --spacing-xl: 15px;
+            --primary: #0a0a0a;
+            --secondary: #2d3748;
+            --text-main: #1a202c;
+            --text-muted: #4a5568;
+            --spacing-xs: 2px;
+            --spacing-sm: 4px;
+            --spacing-md: 8px;
+            --spacing-lg: 12px;
         }
 
         @page {
             size: A4;
-            margin: 8mm;
+            margin: 0;
         }
 
         * {
@@ -27,88 +26,90 @@
             padding: 0;
             box-sizing: border-box;
             font-variant-ligatures: none;
-            -webkit-font-smoothing: subpixel-antialiased;
+            -webkit-font-smoothing: antialiased;
         }
 
         body {
-            font-family: 'Times New Roman', Times, serif;
-            line-height: 1.25;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.3;
             color: var(--text-main);
-            background: #f4f4f4;
+            background: #f7fafc;
             display: flex;
             justify-content: center;
-            padding: 40px 0;
+            padding: 20px 0;
             -webkit-print-color-adjust: exact;
             print-color-adjust: exact;
         }
 
         .resume {
             background: #fff;
-            width: 194mm;
-            min-height: 281mm;
-            padding: 6mm;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            width: 210mm;
+            height: 297mm;
+            padding: 12mm 15mm;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05), 0 10px 15px rgba(0,0,0,0.1);
             position: relative;
-            border: 1px solid #000;
-            margin: 8mm auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
-
-
         @media print {
-            body { background: none; padding: 0; }
-            .resume { box-shadow: none; width: 100%; min-height: auto; padding: 10mm; margin: 0; border: 1px solid #000; }
+            body {
+                background: none;
+                padding: 0;
+                margin: 0;
+                width: 210mm;
+                height: 297mm;
+            }
+            .resume {
+                box-shadow: none;
+                width: 210mm;
+                height: 297mm;
+                padding: 12mm 15mm;
+                margin: 0;
+                border: none;
+            }
         }
 
         header {
             text-align: center;
-            margin-bottom: var(--spacing-lg);
-        }
-
-        h1 {
-            font-size: 15pt;
-            font-weight: 700;
-            text-transform: uppercase;
-            margin: 0;
-            display: inline;
+            margin-bottom: var(--spacing-md);
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: var(--spacing-sm);
         }
 
         .name-section {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
-            margin-bottom: var(--spacing-sm);
-            white-space: nowrap;
+            gap: 10px;
+            margin-bottom: var(--spacing-xs);
         }
 
-        .role {
-            font-size: 15pt;
-            font-weight: 700;
+        h1 {
+            font-size: 20pt;
+            font-weight: 800;
+            letter-spacing: -0.5px;
             color: var(--primary);
             text-transform: uppercase;
         }
 
+        .role {
+            font-size: 14pt;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
         .contact-info {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 4px;
-        }
-
-        .contact-row-main {
-            font-size: 10.5pt;
-            font-weight: 700;
-            color: var(--primary);
-        }
-
-        .contact-row-sub {
-            font-size: 10pt;
-            color: var(--text-muted);
-            display: flex;
             justify-content: center;
-            gap: 15px;
-            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            font-size: 8.5pt;
+            color: var(--text-muted);
+            margin-top: var(--spacing-xs);
         }
 
         .contact-info a {
@@ -123,235 +124,257 @@
         }
 
         .dot {
-            color: #ccc;
+            color: #cbd5e0;
         }
 
         section {
             margin-bottom: var(--spacing-md);
-            break-inside: avoid;
         }
 
         h2 {
             font-size: 10pt;
             font-weight: 700;
             text-transform: uppercase;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 2px;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 3px;
             margin-bottom: var(--spacing-sm);
-            letter-spacing: 0.8px;
+            letter-spacing: 1px;
             color: var(--primary);
         }
 
         .summary {
-            font-size: 9.5pt;
+            font-size: 9pt;
             text-align: justify;
             color: var(--secondary);
+            line-height: 1.35;
         }
 
         .skills-container {
-            font-size: 9.5pt;
+            font-size: 8.5pt;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-xs);
         }
 
         .skill-group {
-            margin-bottom: 4px;
+            display: flex;
+            line-height: 1.3;
         }
 
         .skill-group b {
             font-weight: 700;
             color: var(--primary);
-            min-width: 185px;
-            display: inline-block;
+            width: 170px;
+            flex-shrink: 0;
+        }
+
+        .skill-group span {
+            color: var(--secondary);
         }
 
         .experience-item, .project-item, .education-item {
-            margin-bottom: 5px;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .experience-item:last-child, .project-item:last-child {
+            margin-bottom: 0;
         }
 
         .item-header {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
-            margin-bottom: 1px;
+            margin-bottom: 2px;
         }
 
         .title {
             font-weight: 700;
-            font-size: 10pt;
+            font-size: 9.5pt;
+            color: var(--primary);
         }
 
         .company, .university, .project-role {
-            font-weight: 700;
+            font-weight: 600;
             font-style: italic;
-            font-size: 9.5pt;
+            font-size: 9pt;
             color: var(--text-muted);
         }
 
         .date, .project-type {
-            font-size: 10pt;
+            font-size: 8.5pt;
             color: var(--text-muted);
-            font-weight: 700;
+            font-weight: 600;
         }
 
         ul {
             list-style: none;
-            margin-top: 2px;
+            margin-top: 1px;
         }
 
         li {
-            font-size: 9.5pt;
+            font-size: 8.5pt;
             position: relative;
-            padding-left: 15px;
-            margin-bottom: 1.5px;
+            padding-left: 12px;
+            margin-bottom: 2px;
             text-align: justify;
             color: var(--secondary);
+            line-height: 1.35;
         }
 
         li::before {
             content: "•";
             position: absolute;
             left: 0;
-            color: #000;
+            color: var(--text-muted);
             font-weight: bold;
         }
 
         .impact {
-            font-weight: 700;
+            font-weight: 600;
             color: var(--primary);
         }
 
-        .education-item p {
-            font-size: 10.5pt;
-            margin-top: 2px;
+        .education-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2px;
         }
 
         .certifications-list {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 3px;
+            gap: 2px;
         }
 
         .cert-item {
-            font-size: 9.5pt;
+            font-size: 8.5pt;
             color: var(--secondary);
+            line-height: 1.3;
         }
     </style>
 </head>
 <body>
     <div class="resume">
-        <header>
-            <div class="name-section">
-                <h1>GIDEON SAM A</h1>
-                <span style="font-size: 18pt; font-weight: 700; color: #ccc;">|</span>
-                <span class="role">FRONTEND DEVELOPER</span>
-            </div>
-            <div class="contact-info">
-                <div class="contact-row-main">
+        <div>
+            <header>
+                <div class="name-section">
+                    <h1>Gideon Sam A</h1>
+                </div>
+                <div class="role">Full Stack Developer</div>
+                <div class="contact-info">
                     <span>+91 8056382662</span>
                     <span class="dot">•</span>
                     <a href="mailto:gideonsam2000@gmail.com">gideonsam2000@gmail.com</a>
-                </div>
-                <div class="contact-row-sub">
-                    <span>Tamil Nadu, India</span>
+                    <span class="dot">•</span>
+                    <span>Thoothukudi, Tamil Nadu, India</span>
                     <span class="dot">•</span>
                     <a href="https://linkedin.com/in/gideon-sam">linkedin.com/in/gideon-sam</a>
                     <span class="dot">•</span>
+                    <a href="https://github.com/masgideon">github.com/masgideon</a>
+                    <span class="dot">•</span>
                     <a href="https://masgideon.github.io/portfolio/">masgideon.github.io/portfolio</a>
                 </div>
-            </div>
-        </header>
+            </header>
 
-        <section>
-            <h2>Professional Summary</h2>
-            <p class="summary">
-                Frontend Developer with expertise in creating high-performance web experiences. Skilled in Figma, design systems, and high-fidelity prototyping. Proficient in HTML5, CSS3, Tailwind CSS, and JavaScript (ES6+), with experience in building responsive web applications. Knowledgeable in REST API integration and Design-to-Code conversion. Familiar with Software Development Life Cycle (SDLC) methods and Business Analysis (BA), enabling effective requirement gathering, problem-solving, and collaboration across teams.
-            </p>
-        </section>
+            <section>
+                <h2>Professional Summary</h2>
+                <p class="summary">
+                    Results-driven and analytical Full Stack Developer with hands-on experience building scalable web applications, custom management dashboards, and robust backend systems. Proficient in Python (Django) and JavaScript (React), with a strong foundation in database connectivity (MySQL) and responsive frontend technologies (HTML5, CSS3, Tailwind CSS). Completed an intensive Python Fullstack Developer program (87.17% score, Grade A) and an integrated developer internship at Vetri IT Systems. Blends systematic engineering logic (B.E. Mechanical) with modern software engineering practices to deliver digital excellence.
+                </p>
+            </section>
 
-        <section>
-            <h2>Core Skills</h2>
-            <div class="skills-container">
-                <div class="skill-group"><b>Frontend Development:</b> HTML5, CSS3, JavaScript (ES6+), Tailwind CSS</div>
-                <div class="skill-group"><b>UI/UX & Design:</b> Wireframing, High-Fidelity Prototyping (Figma), Design Systems, User Flows</div>
-                <div class="skill-group"><b>Tools:</b> Figma, Adobe Photoshop, Git</div>
-                <div class="skill-group"><b>Integration & Workflow:</b> REST API Integration, Design-to-Code Conversion, Responsive Design</div>
-                <div class="skill-group"><b>AI-Assisted Development:</b> Using AI tools for code generation, debugging, and UI optimization</div>
-            </div>
-        </section>
-
-        <section>
-            <h2>Key Projects</h2>
-            <div class="project-item">
-                <div class="item-header">
-                    <span class="title">TPCC Platform | Interface Designer & Developer</span>
-                    <span class="project-type">Web Application</span>
+            <section>
+                <h2>Technical Arsenal</h2>
+                <div class="skills-container">
+                    <div class="skill-group"><b>Backend Development:</b> <span>Python, Django Framework, REST APIs, Database Connectivity (MySQL)</span></div>
+                    <div class="skill-group"><b>Frontend Development:</b> <span>HTML5, CSS3, JavaScript (ES6+), ReactJS, Tailwind CSS, UI/UX Design</span></div>
+                    <div class="skill-group"><b>Tools & Methodologies:</b> <span>Git, GitHub, Figma (Wireframing & Prototyping), SDLC, Agile, AI-Assisted Dev</span></div>
+                    <div class="skill-group"><b>Engineering Foundation:</b> <span>Analytical Problem Solving, AutoCAD, Creo, System Optimization</span></div>
                 </div>
-                <ul>
-                    <li><b>Problem:</b> Inefficient community management workflows and fragmented data visualization systems.</li>
-                    <li><b>Design Approach:</b> Designed a high-contrast dashboard ecosystem focusing on seamless data visualization and user tracking using Figma.</li>
-                    <li><b>Outcome:</b> <span class="impact">Automated manual community management tasks</span> and successfully bridged engineering logic with a high-fidelity frontend implementation using Tailwind CSS.</li>
-                </ul>
-            </div>
+            </section>
 
-            <div class="project-item">
-                <div class="item-header">
-                    <span class="title">TP Media | Visual Designer & Brand Lead</span>
-                    <span class="project-type">Brand Identity</span>
+            <section>
+                <h2>Professional Experience</h2>
+                <div class="experience-item">
+                    <div class="item-header">
+                        <span class="title">Python Fullstack Developer Intern</span>
+                        <span class="date">Feb 2026 – May 2026</span>
+                    </div>
+                    <div class="company">Vetri IT Systems Private Limited, Chennai, India</div>
+                    <ul>
+                        <li>Gained hands-on experience in fullstack development using Python, building RESTful APIs, and managing server-side application logic.</li>
+                        <li>Configured and optimized <span class="impact">MySQL database connectivity</span> for backend models, improving query efficiency and data retrieval speeds.</li>
+                        <li>Translated design wireframes from Figma into high-fidelity, responsive frontend views using HTML5, CSS3, and JavaScript.</li>
+                        <li>Collaborated in an agile team environment using Git/GitHub for version control, code reviews, and deployment prep.</li>
+                    </ul>
                 </div>
-                <ul>
-                    <li><b>Problem:</b> Inconsistent visual branding across social media and digital platforms affecting community engagement.</li>
-                    <li><b>Design Approach:</b> Engineered narrative-driven storytelling layouts in Figma and developed a scalable visual identity system.</li>
-                    <li><b>Outcome:</b> <span class="impact">Significantly increased community engagement</span> by prioritizing visual clarity and delivered a comprehensive asset library for diverse content clusters.</li>
-                </ul>
-            </div>
+            </section>
 
-            <div class="project-item">
-                <div class="item-header">
-                    <span class="title">TPVTC Website | Frontend Developer</span>
-                    <span class="project-type">Community Portal</span>
+            <section>
+                <h2>Key Projects</h2>
+                <div class="project-item">
+                    <div class="item-header">
+                        <span class="title">TPCC Platform | Full Stack Developer & Designer</span>
+                        <span class="project-type">Web Application</span>
+                    </div>
+                    <ul>
+                        <li><b>Challenge:</b> Inefficient community management workflows and fragmented data visualization systems.</li>
+                        <li><b>Approach:</b> Designed a high-contrast dashboard in Figma and implemented a responsive React frontend styled with Tailwind CSS, integrated with backend REST APIs for seamless data tracking and real-time visualization.</li>
+                        <li><b>Outcome:</b> <span class="impact">Automated manual community management workflows</span> and reduced task processing times by bridging frontend interaction with structured backend logic.</li>
+                    </ul>
                 </div>
-                <ul>
-                    <li><b>Problem:</b> Lack of a centralized hub for a growing digital community to access resources and event updates.</li>
-                    <li><b>Design Approach:</b> Developed a responsive, media-rich community portal using HTML5, CSS3, and JavaScript, focusing on high engagement and content discoverability.</li>
-                    <li><b>Outcome:</b> <span class="impact">Established a unified brand presence</span> and improved user retention by 30% through intuitive navigation and interactive gallery systems.</li>
-                </ul>
-            </div>
 
-            <div class="project-item">
-                <div class="item-header">
-                    <span class="title">TPVTC Admin Panel | Dashboard Specialist</span>
-                    <span class="project-type">Internal Tool</span>
+                <div class="project-item">
+                    <div class="item-header">
+                        <span class="title">TPVTC Admin Panel | Dashboard & Backend Specialist</span>
+                        <span class="project-type">Internal Tool</span>
+                    </div>
+                    <ul>
+                        <li><b>Challenge:</b> Manual tracking of user data and community metrics leading to operational bottlenecks.</li>
+                        <li><b>Approach:</b> Developed a custom management dashboard utilizing a Django-based REST API and MySQL database connectivity for automated reporting and real-time logistics monitoring.</li>
+                        <li><b>Outcome:</b> <span class="impact">Reduced administrative overhead by 40%</span> and created a highly scalable platform for staff metrics tracking and logistics management.</li>
+                    </ul>
                 </div>
-                <ul>
-                    <li><b>Problem:</b> Manual tracking of user data and community metrics leading to operational delays.</li>
-                    <li><b>Design Approach:</b> Architected a custom management dashboard featuring REST API integration for real-time data monitoring and automated reporting.</li>
-                    <li><b>Outcome:</b> <span class="impact">Reduced administrative overhead by 40%</span> and provided a scalable solution for team-wide logistics management.</li>
-                </ul>
-            </div>
 
-
-        </section>
-
-        <section>
-            <h2>Education</h2>
-            <div class="education-item">
-                <div class="item-header">
-                    <span class="title">B.E. Mechanical Engineering</span>
-                    <span class="date">2020 – 2024</span>
+                <div class="project-item">
+                    <div class="item-header">
+                        <span class="title">TPVTC Website | Frontend Developer</span>
+                        <span class="project-type">Community Portal</span>
+                    </div>
+                    <ul>
+                        <li><b>Challenge:</b> Fragmented brand identity and lack of a centralized hub for a growing community.</li>
+                        <li><b>Approach:</b> Designed and built a responsive, media-rich community portal utilizing HTML5, CSS3, JavaScript, and Figma, focusing on high engagement and search/navigation optimization.</li>
+                        <li><b>Outcome:</b> <span class="impact">Boosted user retention by 30%</span> and unified community brand presence.</li>
+                    </ul>
                 </div>
-                <div class="university">University VOC College of Engineering, Thoothukudi</div>
-                <p>Focus on systematic design and technical precision. Academic Performance: <span class="impact">78%</span></p>
-            </div>
-        </section>
+            </section>
+        </div>
 
-        <section>
-            <h2>Certifications</h2>
-            <div class="certifications-list">
-                <div class="cert-item">• <b>3D Printing & NX CAD</b> – TANSAM (Additive Design & Spatial Thinking)</div>
-                <div class="cert-item">• <b>EV Automobile Design</b> – Skill-Lync (System Layout & Integration)</div>
-                <div class="cert-item">• <b>Robotics Simulation</b> – Naan Mudhalvan (Digital Twinning & Interaction Logic)</div>
-                <div class="cert-item">• <b>Employability Skills Training</b> – TITAN LeAP & Naandi Foundation</div>
-            </div>
-        </section>
+        <div>
+            <section>
+                <h2>Education</h2>
+                <div class="education-item">
+                    <div class="education-row">
+                        <span class="title">B.E. Mechanical Engineering</span>
+                        <span class="date">2020 – 2024</span>
+                    </div>
+                    <div class="university">University VOC College of Engineering, Thoothukudi</div>
+                    <p style="font-size: 8.5pt; color: var(--secondary);">Analytical problem solving, system dynamics, and design optimization. Cumulative Performance: <span class="impact">78%</span></p>
+                </div>
+            </section>
+
+            <section style="margin-bottom: 0;">
+                <h2>Certifications & Highlights</h2>
+                <div class="certifications-list">
+                    <div class="cert-item">• <b>Python Fullstack Developer Internship Certificate</b> – Vetri IT Systems Pvt. Ltd. | Feb 2026 – May 2026</div>
+                    <div class="cert-item">• <b>Certificate in Python Fullstack (Course)</b> – Vetri Technology Solutions | Jan 2026 – May 2026 (A Grade, 87.17% marks. Covered: SDLC, HTML & CSS, JavaScript, ReactJS, Python with Django, and Database Connectivity - MySQL)</div>
+                    <div class="cert-item">• <b>AutoCAD Mechanical 2024 (Autodesk Authorized)</b> – GUVI Geek Network & HCL | June 2026 (101+ Hours)</div>
+                    <div class="cert-item">• <b>Autodesk Certified CAD for Automotive & Product Design</b> – GUVI | March 2026 (4 Months)</div>
+                    <div class="cert-item">• <b>Robotics Simulation for Manufacturing & 3D Printing</b> – Naan Mudhalvan | TANSAM & SkillSonics</div>
+                    <div class="cert-item">• <b>Languages:</b> English (Fluent), Tamil (Native), Hindi (Basic)</div>
+                </div>
+            </section>
+        </div>
     </div>
 </body>
 </html>
