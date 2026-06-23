@@ -552,7 +552,7 @@
             </div>
 
             <!-- Milestone 5: TPVTC Discord Bot -->
-            <div class="timeline-milestone relative flex flex-col md:flex-row items-center justify-between gap-12 group">
+            <div onclick="openBotModal()" class="timeline-milestone relative flex flex-col md:flex-row items-center justify-between gap-12 group cursor-pointer">
                 <div class="w-full md:w-[45%] text-left md:text-right">
                     <span class="font-mono text-indigo-400 text-xs tracking-tighter uppercase mb-4 block">Discord Automation</span>
                     <h3 class="text-3xl font-bold mb-4">TPVTC Discord Bot</h3>
@@ -672,6 +672,80 @@
         <img src="" id="lightbox-img" alt="Enlarged View">
         <div class="absolute top-8 right-8 text-white/40 font-mono text-sm hover:text-white transition-colors uppercase tracking-widest pointer-events-none">
             Click anywhere to close
+        </div>
+    </div>
+
+    <!-- Discord Bot Features Modal -->
+    <div id="bot-modal" class="fixed inset-0 bg-charcoal/95 backdrop-blur-md z-[100] hidden opacity-0 transition-opacity duration-300 justify-center items-center p-4">
+        <div class="bg-charcoal/80 border border-white/10 rounded-3xl max-w-2xl w-full max-h-[85vh] overflow-y-auto bento-card p-8 relative flex flex-col gap-6 no-scrollbar" onclick="event.stopPropagation()">
+            <!-- Close Button -->
+            <button onclick="closeBotModal()" class="absolute top-6 right-6 text-white/40 hover:text-white transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+
+            <!-- Title & Header -->
+            <div>
+                <span class="font-mono text-indigo-400 text-xs tracking-widest uppercase mb-1 block">Project Blueprint</span>
+                <h3 class="text-3xl font-bold text-white">TPVTC Discord Bot Features</h3>
+                <p class="text-white/40 text-sm mt-1">Full breakdown of VTC automation, analytics, and interactive panels.</p>
+            </div>
+
+            <!-- Features Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Category 1: TruckersMP -->
+                <div class="p-5 rounded-2xl bg-white/5 border border-white/5 space-y-3">
+                    <div class="flex items-center gap-3 text-indigo-400">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>
+                        <h4 class="font-semibold text-sm text-white">TruckersMP & Event Integration</h4>
+                    </div>
+                    <ul class="space-y-2 text-xs text-white/60 list-disc list-inside text-left">
+                        <li><span class="text-white/80 font-medium">Event Checker:</span> Live event stats fetched from TruckersMP API.</li>
+                        <li><span class="text-white/80 font-medium">Convoy Calendar:</span> Displays schedule in a clean calendar embed.</li>
+                        <li><span class="text-white/80 font-medium">Availability Tracker:</span> Computes slot availability based on convoy count.</li>
+                        <li><span class="text-white/80 font-medium">Active Drivers Monitor:</span> Tracks player presence in real-time.</li>
+                    </ul>
+                </div>
+
+                <!-- Category 2: Interactive Panels -->
+                <div class="p-5 rounded-2xl bg-white/5 border border-white/5 space-y-3">
+                    <div class="flex items-center gap-3 text-indigo-400">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"/></svg>
+                        <h4 class="font-semibold text-sm text-white">Ticket & Recruitment Modals</h4>
+                    </div>
+                    <ul class="space-y-2 text-xs text-white/60 list-disc list-inside text-left">
+                        <li><span class="text-white/80 font-medium">Support Ticket Center:</span> Dropdown menu for opening ticket threads.</li>
+                        <li><span class="text-white/80 font-medium">Ticket Lifecycle:</span> Auto open/close & response metrics logging.</li>
+                        <li><span class="text-white/80 font-medium">Application Modals:</span> Discord forms for VTC & staff recruitment.</li>
+                    </ul>
+                </div>
+
+                <!-- Category 3: Community -->
+                <div class="p-5 rounded-2xl bg-white/5 border border-white/5 space-y-3">
+                    <div class="flex items-center gap-3 text-indigo-400">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                        <h4 class="font-semibold text-sm text-white">Community & Utilities</h4>
+                    </div>
+                    <ul class="space-y-2 text-xs text-white/60 list-disc list-inside text-left">
+                        <li><span class="text-white/80 font-medium">Interactive Polls:</span> Anonymous voting with customs choice & limits.</li>
+                        <li><span class="text-white/80 font-medium">Birthday System:</span> Automatic tracking & announcements.</li>
+                        <li><span class="text-white/80 font-medium">Driver Guide Manual:</span> Interactive formatted rules booklet.</li>
+                        <li><span class="text-white/80 font-medium">Sticky Messages:</span> Pins persistent guidelines to active channels.</li>
+                    </ul>
+                </div>
+
+                <!-- Category 4: Web Transcript Server -->
+                <div class="p-5 rounded-2xl bg-white/5 border border-white/5 space-y-3">
+                    <div class="flex items-center gap-3 text-indigo-400">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/></svg>
+                        <h4 class="font-semibold text-sm text-white">Logs & Web Transcript Server</h4>
+                    </div>
+                    <ul class="space-y-2 text-xs text-white/60 list-disc list-inside text-left">
+                        <li><span class="text-white/80 font-medium">HTML Transcript Server:</span> Express server to view closed ticket logs.</li>
+                        <li><span class="text-white/80 font-medium">Error Tracking:</span> Directly routes bot crashes to dev channel.</li>
+                        <li><span class="text-white/80 font-medium">Staff Performance:</span> Logs staff activity & response metrics.</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -825,9 +899,41 @@
             }, 400);
         }
 
+        // Discord Bot Modal Functions
+        function openBotModal() {
+            const modal = document.getElementById('bot-modal');
+            modal.style.display = 'flex';
+            setTimeout(() => {
+                modal.classList.add('opacity-100');
+            }, 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeBotModal() {
+            const modal = document.getElementById('bot-modal');
+            modal.classList.remove('opacity-100');
+            setTimeout(() => {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }, 300);
+        }
+
+        // Close bot modal on clicking backdrop
+        window.addEventListener('DOMContentLoaded', () => {
+            const botModal = document.getElementById('bot-modal');
+            if (botModal) {
+                botModal.addEventListener('click', (e) => {
+                    if (e.target === botModal) closeBotModal();
+                });
+            }
+        });
+
         // Close on Escape key
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'Escape') {
+                closeLightbox();
+                closeBotModal();
+            }
         });
 
     </script>
